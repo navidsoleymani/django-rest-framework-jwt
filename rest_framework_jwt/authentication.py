@@ -27,7 +27,7 @@ class BaseJSONWebTokenAuthentication(ABC, BaseAuthentication):
     def authenticate(self, request):
         """
         Returns a two-tuple of `User` and token if a valid signature has been
-        supplied using JWT-based authentication.  Otherwise returns `None`.
+        supplied using JWT-based authentication.  Otherwise, returns `None`.
         """
         jwt_value = self.get_jwt_value(request)
         if jwt_value is None:
@@ -46,7 +46,7 @@ class BaseJSONWebTokenAuthentication(ABC, BaseAuthentication):
 
         user = self.authenticate_credentials(payload)
 
-        return (user, payload)
+        return user, payload
 
     @staticmethod
     def authenticate_credentials(payload):
