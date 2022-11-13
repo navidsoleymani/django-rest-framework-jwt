@@ -78,7 +78,6 @@ if sys.argv[-1] == 'publish':
     print('  git push --tags')
     sys.exit()
 
-
 setup(
     name=name,
     version=version,
