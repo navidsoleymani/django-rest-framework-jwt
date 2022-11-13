@@ -289,7 +289,7 @@ class VerifyJSONWebTokenTestsSymmetric(TokenTestCase):
         """
         client = APIClient(enforce_csrf_checks=True)
 
-        # Make an expired token..
+        # Make an expired token.
         token = self.create_token(
             self.user,
             exp=datetime.utcnow() - timedelta(seconds=5),
@@ -353,7 +353,7 @@ class VerifyJSONWebTokenTestsAsymmetric(TokenTestCase):
 
     def test_verify_jwt_with_pub_pvt_key(self):
         """
-        Test that a token can be signed with asymmetrics keys
+        Test that a token can be signed with asymmetries keys
         """
         client = APIClient(enforce_csrf_checks=True)
 
@@ -372,7 +372,7 @@ class VerifyJSONWebTokenTestsAsymmetric(TokenTestCase):
         """
         client = APIClient(enforce_csrf_checks=True)
 
-        # Make an expired token..
+        # Make an expired token.
         token = self.create_token(
             self.user,
             exp=datetime.utcnow() - timedelta(seconds=5),
@@ -402,7 +402,7 @@ class VerifyJSONWebTokenTestsAsymmetric(TokenTestCase):
 
     def test_verify_jwt_fails_with_bad_pvt_key(self):
         """
-        Test that an mismatched private key token will fail with
+        Test that a mismatched private key token will fail with
         the correct error.
         """
 
@@ -442,7 +442,7 @@ class RefreshJSONWebTokenTests(TokenTestCase):
         """
         Test getting a refreshed token from original token works
 
-        No date/time modifications are neccessary because it is assumed
+        No date/time modifications are necessary because it is assumed
         that this operation will take less than 300 seconds.
         """
         client = APIClient(enforce_csrf_checks=True)
