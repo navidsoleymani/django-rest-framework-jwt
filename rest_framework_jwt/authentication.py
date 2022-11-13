@@ -48,7 +48,8 @@ class BaseJSONWebTokenAuthentication(ABC, BaseAuthentication):
 
         return (user, payload)
 
-    def authenticate_credentials(self, payload):
+    @staticmethod
+    def authenticate_credentials(payload):
         """
         Returns an active user that matches the payload's user id and email.
         """
