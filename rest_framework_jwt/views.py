@@ -18,6 +18,7 @@ class JSONWebTokenAPIView(APIView):
     """
     permission_classes = ()
     authentication_classes = ()
+    serializer_class = None
 
     def get_serializer_context(self):
         """
