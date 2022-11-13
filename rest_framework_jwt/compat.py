@@ -11,12 +11,12 @@ class Serializer(serializers.Serializer):
 
 class PasswordField(serializers.CharField):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         if 'style' not in kwargs:
             kwargs['style'] = {'input_type': 'password'}
         else:
             kwargs['style']['input_type'] = 'password'
-        super(PasswordField, self).__init__(*args, **kwargs)
+        super(PasswordField, self).__init__(**kwargs)
 
 
 def get_username_field():
